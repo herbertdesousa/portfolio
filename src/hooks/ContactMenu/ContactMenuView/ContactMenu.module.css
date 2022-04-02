@@ -1,0 +1,30 @@
+.root {
+  width: 312px;
+  margin-left: calc((100vw - 312px) / 2);
+  @apply fixed top-12 bg-white z-20 py-8 px-6 rounded
+}
+.root-top-open {
+  transition: all 100ms linear;
+  @apply top-12
+}
+.root-top-close {
+  top: -100%;
+  transition: all 100ms linear;
+}
+
+.bg {
+  @apply fixed top-0 w-screen h-screen bg-black z-10 opacity-10
+}
+.root-open {
+  opacity: 1;
+  transition: all 100ms linear;
+}
+.root-close {
+  opacity: 0;
+  transition: all 100ms linear;
+}
+
+.contact-button {
+  @apply flex items-center p-4 w-full font-medium rounded text-left border border-light-gray mt-2
+}
+

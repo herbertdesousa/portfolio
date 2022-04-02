@@ -1,0 +1,32 @@
+.root {
+  width: 254px;
+  @apply fixed top-8 bg-white z-20 py-8 px-6 rounded-r
+}
+.root-left-open {
+  left: 0;
+  transition: all 200ms linear;
+}
+.root-left-close {
+  left: -100%;
+  transition: all 200ms linear;
+}
+
+.bg {
+  @apply fixed top-0 w-screen h-screen bg-black z-10 opacity-10
+}
+.root-open {
+  opacity: 1;
+  transition: all 100ms linear;
+}
+.root-close {
+  opacity: 0;
+  transition: all 100ms linear;
+}
+
+.link-button {
+  @apply p-4 w-full font-medium rounded text-left
+}
+
+.link-button-active {
+  @apply bg-light-primary text-primary
+}
