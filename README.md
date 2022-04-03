@@ -1,4 +1,3 @@
 - menu de selecionar lingua não visivel quando n tem scroll (home/about)
-- traduzir página de last projects -> details
-- add dados
-- links dos contacts
+- add imagens
+- links para: contatos, certificados, cv's

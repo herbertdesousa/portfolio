@@ -49,13 +49,13 @@ const About: React.FC = () => {
             </Link>
           </li>
           <li className="font-medium underline mt-3">
-            <Link href="/">{text.sections.experiencies.title}</Link>
+            <Link href="/experiencies">{text.sections.experiencies.title}</Link>
           </li>
           <li className="font-medium underline mt-3">
-            <Link href="/">{text.sections.skills.title}</Link>
+            <Link href="/skills">{text.sections.skills.title}</Link>
           </li>
           <li className="font-medium underline mt-3">
-            <Link href="/">{text.sections.cv.title}</Link>
+            <Link href="/cv">{text.sections.cv.title}</Link>
           </li>
         </ul>
       </div>

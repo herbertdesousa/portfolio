@@ -1,9 +1,21 @@
 import React from 'react';
+import { GetServerSideProps } from 'next';
 
 import { Section } from '@/modules';
+import axios from 'axios';
+
 import { useLanguage } from '@/hooks/useLanguage';
 
-const Experiencies: React.FC = () => {
+interface IExperienciesProps {
+  experiencies: {
+    id: string;
+    title: string;
+    date: string;
+    url: string;
+  }[];
+}
+
+const Experiencies: React.FC<IExperienciesProps> = ({ experiencies }) => {
   const text = useLanguage();
 
   return (
@@ -13,14 +25,14 @@ const Experiencies: React.FC = () => {
       </h1>
 
       <ul className="mt-12">
-        {[1].map(item => (
-          <li key={String(item)} className="-m-1">
+        {experiencies.map(item => (
+          <li key={item.id} className="-m-1">
             <button type="button" className="flex bg-white w-full">
               <div className="min-w-14 w-14 h-14 bg-gray rounded-full" />
               <div className="ml-4">
-                <strong className="text-left">Guia do Transporte</strong>
+                <strong className="text-left">{item.title}</strong>
                 <br />
-                <span className="flex items-center text-gray">2019-2022</span>
+                <span className="flex items-center text-gray">{item.date}</span>
               </div>
             </button>
             <div
@@ -32,6 +44,18 @@ const Experiencies: React.FC = () => {
       </ul>
     </Section>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const url = `http://${context.req.headers.host}/api/experiencies`;
+
+  const { data: experiencies } = await axios.get(url);
+
+  return {
+    props: {
+      experiencies,
+    },
+  };
 };
 
 export default Experiencies;

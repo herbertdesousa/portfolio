@@ -1,11 +1,22 @@
 import React from 'react';
+import { GetServerSideProps } from 'next';
 
 import { MdOpenInNew } from 'react-icons/md';
+import axios from 'axios';
 import { useLanguage } from '@/hooks/useLanguage';
 
 import { Section } from '@/modules';
 
-const Certificates: React.FC = () => {
+interface ICertificatesProps {
+  certificates: {
+    id: string;
+    title: string;
+    date: string;
+    url: string;
+  }[];
+}
+
+const Certificates: React.FC<ICertificatesProps> = ({ certificates }) => {
   const text = useLanguage();
 
   return (
@@ -15,20 +26,19 @@ const Certificates: React.FC = () => {
       </h1>
 
       <ul className="mt-12">
-        {[1, 2, 3].map(item => (
-          <li key={String(item)}>
+        {certificates.map(item => (
+          <li key={item.id}>
             <button
               type="button"
               className="flex justify-between items-center border-b border-light-gray py-6 h-20 w-full"
-              // style={{ width: 'calc(100% + 48px)', marginLeft: '-24px' }}
             >
               <div>
-                <strong>HARDWARE</strong>
-                <p className="text-gray text-left mt-1">2016-2017</p>
+                <strong className="uppercase">{item.title}</strong>
+                <p className="text-gray text-left mt-1">{item.date}</p>
               </div>
 
               <span className="flex items-center text-primary">
-                Open
+                {text.openLink}
                 <MdOpenInNew className="ml-2" />
               </span>
             </button>
@@ -37,6 +47,18 @@ const Certificates: React.FC = () => {
       </ul>
     </Section>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const url = `http://${context.req.headers.host}/api/certificates`;
+
+  const { data: certificates } = await axios.get(url);
+
+  return {
+    props: {
+      certificates,
+    },
+  };
 };
 
 export default Certificates;

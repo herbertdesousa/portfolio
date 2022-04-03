@@ -15,23 +15,40 @@ const CV: React.FC = () => {
       </h1>
 
       <ul className="mt-12">
-        {[1, 2].map(item => (
-          <li key={String(item)}>
+        <li>
+          <button
+            type="button"
+            className="flex justify-between items-center border-b border-light-gray py-6 h-20 w-full"
+          >
+            <div>
+              <strong className="uppercase">
+                {text.sections.cv.ptBRTitle}
+              </strong>
+            </div>
+
+            <span className="flex items-center text-primary">
+              {text.openLink}
+              <MdOpenInNew className="ml-2" />
+            </span>
+          </button>
+          <li>
             <button
               type="button"
               className="flex justify-between items-center border-b border-light-gray py-6 h-20 w-full"
             >
               <div>
-                <strong>PORTUGUESE VERSION</strong>
+                <strong className="uppercase">
+                  {text.sections.cv.enTitle}
+                </strong>
               </div>
 
               <span className="flex items-center text-primary">
-                Open
+                {text.openLink}
                 <MdOpenInNew className="ml-2" />
               </span>
             </button>
           </li>
-        ))}
+        </li>
       </ul>
     </Section>
   );
