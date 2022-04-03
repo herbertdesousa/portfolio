@@ -1,3 +1,3 @@
 - menu de selecionar lingua não visivel quando n tem scroll (home/about)
-- add imagens
-- links para: contatos, certificados, cv's
+
+- ADD HARDWARE CERTIFICATE

@@ -4,7 +4,7 @@ const data = [
   {
     id: 'id-001',
     title: 'Guia do Transporte',
-    img: '...',
+    img: '/experiencies/guia-do-transporte.jpg',
     date: '2019-2022',
   },
 ];

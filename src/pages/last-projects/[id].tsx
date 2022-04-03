@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 import { MdArrowBack } from 'react-icons/md';
 import { useRouter } from 'next/router';
@@ -52,7 +53,16 @@ const LastProjectsDetails: React.FC = () => {
         {text.sections.lastProjects.details.title}
       </h1>
 
-      <div className="w-full rounded bg-gray mt-8" style={{ height: 190 }} />
+      {project.img && (
+        <div className="relative w-full" style={{ height: 190 }}>
+          <Image
+            src={project.img}
+            layout="fill"
+            objectFit="cover"
+            className="bg-gray rounded-t"
+          />
+        </div>
+      )}
       <ul className="flex mt-2">
         {project.techs.map(item => (
           <li

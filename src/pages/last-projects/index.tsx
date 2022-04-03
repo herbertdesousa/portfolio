@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -13,6 +14,7 @@ export interface IProject {
   title: string;
   techs: string[];
   description: string;
+  img?: string;
 }
 
 interface ILastProjectsProps {
@@ -35,13 +37,27 @@ const LastProjects: React.FC<ILastProjectsProps> = ({ projects }) => {
           <li key={item.id}>
             <button
               type="button"
-              className="border border-light-gray rounded"
+              className="flex flex-col border border-light-gray rounded"
+              style={{ minHeight: 178 }}
               onClick={() => push(`/last-projects/${item.id}`)}
             >
-              <div className="w-full h-20 bg-gray rounded-t" />
+              {item.img && (
+                <div className="relative h-20 w-full">
+                  <Image
+                    src={item.img}
+                    layout="fill"
+                    objectFit="cover"
+                    className="bg-gray rounded-t"
+                  />
+                </div>
+              )}
               <div className="p-2  flex flex-col items-start">
                 <strong className="mb-2">{item.title}</strong>
-                <p className="text-left text-gray text-xs line-clamp-3">
+                <p
+                  className={`text-left text-gray text-xs line-clamp-${
+                    item.img ? 3 : 8
+                  }`}
+                >
                   {item.description}
                 </p>
               </div>

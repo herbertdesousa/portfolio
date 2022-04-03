@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {
   forwardRef,
   useCallback,
@@ -10,7 +11,15 @@ import classNames from 'classnames';
 import { useLanguage } from '@/hooks/useLanguage';
 
 import { MdClose, MdOpenInNew } from 'react-icons/md';
+import Link from 'next/link';
 import style from './ContactMenu.module.css';
+
+const links = {
+  whatsapp: 'https://api.whatsapp.com/send?phone=+5511959110254',
+  gmail: 'mailto:sousaherbert138@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/herbert-de-sousa-vilela-311638230/',
+  github: 'https://github.com/herbertdesousa',
+};
 
 export interface IContactMenuRef {
   open(): void;
@@ -89,22 +98,30 @@ const ContactMenu: React.ForwardRefRenderFunction<IContactMenuRef, IProps> = (
 
         <ul className="mt-4">
           <li>
-            <button type="button" className={style['contact-button']}>
-              WhatsApp
-              <MdOpenInNew className="ml-2 text-gray" />
-            </button>
-            <button type="button" className={style['contact-button']}>
-              Gmail
-              <MdOpenInNew className="ml-2 text-gray" />
-            </button>
-            <button type="button" className={style['contact-button']}>
-              LinkedIn
-              <MdOpenInNew className="ml-2 text-gray" />
-            </button>
-            <button type="button" className={style['contact-button']}>
-              Github
-              <MdOpenInNew className="ml-2 text-gray" />
-            </button>
+            <Link href={links.whatsapp} passHref>
+              <a target="_blank" className={style['contact-button']}>
+                WhatsApp
+                <MdOpenInNew className="ml-2 text-gray" />
+              </a>
+            </Link>
+            <Link href={links.gmail} passHref>
+              <a target="_blank" className={style['contact-button']}>
+                Gmail
+                <MdOpenInNew className="ml-2 text-gray" />
+              </a>
+            </Link>
+            <Link href={links.linkedin} passHref>
+              <a target="_blank" className={style['contact-button']}>
+                LinkedIn
+                <MdOpenInNew className="ml-2 text-gray" />
+              </a>
+            </Link>
+            <Link href={links.github} passHref>
+              <a target="_blank" className={style['contact-button']}>
+                Github
+                <MdOpenInNew className="ml-2 text-gray" />
+              </a>
+            </Link>
           </li>
         </ul>
       </div>

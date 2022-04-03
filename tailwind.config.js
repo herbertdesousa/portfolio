@@ -19,7 +19,14 @@ module.exports = {
       // poppins: ['var(--font-poppins)'],
       lato: ['var(--font-lato)']
     },
-    extend: {},
+    extend: {
+      lineClamp: {
+        7: '7',
+        8: '8',
+        9: '9',
+        10: '10',
+      }
+    },
   },
   variants: {
     extend: {},

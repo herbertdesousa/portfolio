@@ -5,19 +5,19 @@ const data = [
     id: 'id-001',
     title: 'HARDWARE',
     date: '2016-2017',
-    url: '...',
+    url: '/certificates/hardware.pdf',
   },
   {
     id: 'id-002',
     title: 'Bootcamp rocketseat',
     date: '2020-2021',
-    url: '...',
+    url: '/certificates/rocketseat.pdf',
   },
   {
     id: 'id-003',
     title: 'Just Javascript',
     date: '2021-2022',
-    url: '...',
+    url: '/certificates/justjavascript.pdf',
   },
 ];
 

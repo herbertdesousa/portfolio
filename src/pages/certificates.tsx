@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { GetServerSideProps } from 'next';
 
@@ -6,6 +7,7 @@ import axios from 'axios';
 import { useLanguage } from '@/hooks/useLanguage';
 
 import { Section } from '@/modules';
+import Link from 'next/link';
 
 interface ICertificatesProps {
   certificates: {
@@ -28,20 +30,22 @@ const Certificates: React.FC<ICertificatesProps> = ({ certificates }) => {
       <ul className="mt-12">
         {certificates.map(item => (
           <li key={item.id}>
-            <button
-              type="button"
-              className="flex justify-between items-center border-b border-light-gray py-6 h-20 w-full"
-            >
-              <div>
-                <strong className="uppercase">{item.title}</strong>
-                <p className="text-gray text-left mt-1">{item.date}</p>
-              </div>
+            <Link href={item.url} locale="pt-br">
+              <a
+                target="_blank"
+                className="flex justify-between items-center border-b border-light-gray py-6 h-20 w-full"
+              >
+                <div>
+                  <strong className="uppercase">{item.title}</strong>
+                  <p className="text-gray text-left mt-1">{item.date}</p>
+                </div>
 
-              <span className="flex items-center text-primary">
-                {text.openLink}
-                <MdOpenInNew className="ml-2" />
-              </span>
-            </button>
+                <span className="flex items-center text-primary">
+                  {text.openLink}
+                  <MdOpenInNew className="ml-2" />
+                </span>
+              </a>
+            </Link>
           </li>
         ))}
       </ul>

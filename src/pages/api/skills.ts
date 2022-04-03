@@ -2,7 +2,28 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 const data = {
   'pt-br': {
-    skills: ['NODEJS', 'JS', 'REACTJS', 'TYPESCRIPT'],
+    skills: [
+      {
+        id: 'id-001',
+        label: 'NODEJS',
+        img: '/skills/nodejs-logo.png',
+      },
+      {
+        id: 'id-002',
+        label: 'JS',
+        img: '/skills/js-logo.png',
+      },
+      {
+        id: 'id-003',
+        label: 'REACTJS',
+        img: '/skills/reactjs-logo.png',
+      },
+      {
+        id: 'id-004',
+        label: 'TYPESCRIPT',
+        img: '/skills/typescript-logo.png',
+      },
+    ],
     languages: ['Português (NATIVO)', 'Inglês (Intermediário)'],
     hobbies: [
       'música',
@@ -12,7 +33,28 @@ const data = {
     ],
   },
   en: {
-    skills: ['NODEJS', 'JS', 'REACTJS', 'TYPESCRIPT'],
+    skills: [
+      {
+        id: 'id-001',
+        label: 'NODEJS',
+        img: '/skills/nodejs-logo.png',
+      },
+      {
+        id: 'id-002',
+        label: 'JS',
+        img: '/skills/js-logo.png',
+      },
+      {
+        id: 'id-003',
+        label: 'REACTJS',
+        img: '/skills/reactjs-logo.png',
+      },
+      {
+        id: 'id-004',
+        label: 'TYPESCRIPT',
+        img: '/skills/typescript-logo.png',
+      },
+    ],
     languages: ['portuguese (native)', 'english (intermediate)'],
     hobbies: [
       'MUSIC',

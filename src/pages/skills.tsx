@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 
 import axios from 'axios';
 
@@ -8,7 +9,11 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 interface ISkillsProps {
   data: {
-    skills: string[];
+    skills: {
+      id: string;
+      label: string;
+      img: string;
+    }[];
     languages: string[];
     hobbies: string[];
   };
@@ -29,10 +34,18 @@ const Skills: React.FC<ISkillsProps> = ({ data }) => {
         className="flex mt-12 overflow-scroll no-scroll -ml-6 px-6"
         style={{ width: 'calc(48px + 100%)' }}
       >
-        {data.skills.map(item => (
-          <li key={item} className="flex flex-col items-center mr-6">
-            <div className="w-12 h-12 bg-gray rounded" />
-            <strong className="text-left whitespace-nowrap mt-2">{item}</strong>
+        {data.skills.slice(0, 4).map(item => (
+          <li key={item.id} className="flex flex-col items-center mr-6">
+            <Image
+              src={item.img}
+              width="48"
+              height="48"
+              layout="fixed"
+              className="rounded"
+            />
+            <strong className="text-left whitespace-nowrap mt-2">
+              {item.label}
+            </strong>
           </li>
         ))}
       </ul>

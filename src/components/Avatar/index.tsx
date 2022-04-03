@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { MdOpenInNew } from 'react-icons/md';
 
@@ -22,7 +23,12 @@ const Avatar: React.FC<IAvatarProps> = ({ onClickContact }) => {
         contactMenuModalizeRef.current?.open();
       }}
     >
-      <div className="min-w-14 w-14 h-14 bg-gray rounded-full" />
+      <Image
+        src="/avatar.jpg"
+        width="56"
+        height="56"
+        className="rounded-full"
+      />
       <div className="ml-4">
         <strong className="text-left">Herbert Vilela</strong>
         <br />

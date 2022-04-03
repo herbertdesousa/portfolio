@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 
 import { Section } from '@/modules';
 import axios from 'axios';
@@ -11,7 +12,7 @@ interface IExperienciesProps {
     id: string;
     title: string;
     date: string;
-    url: string;
+    img: string;
   }[];
 }
 
@@ -28,7 +29,12 @@ const Experiencies: React.FC<IExperienciesProps> = ({ experiencies }) => {
         {experiencies.map(item => (
           <li key={item.id} className="-m-1">
             <button type="button" className="flex bg-white w-full">
-              <div className="min-w-14 w-14 h-14 bg-gray rounded-full" />
+              <Image
+                src={item.img}
+                width="56"
+                height="56"
+                className="rounded-full"
+              />
               <div className="ml-4">
                 <strong className="text-left">{item.title}</strong>
                 <br />
