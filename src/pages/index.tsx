@@ -51,7 +51,13 @@ const Home: React.FC = () => {
             <div
               style={{ width: 'calc(100% + 24px + 24px)', marginLeft: '-24px' }}
             >
-              <Menu />
+              <Menu
+                onClickOpenOptionLanguage={() => {
+                  if (window.scrollY <= 100) {
+                    window.scrollTo({ top: 200, behavior: 'smooth' });
+                  }
+                }}
+              />
             </div>
           </div>
 

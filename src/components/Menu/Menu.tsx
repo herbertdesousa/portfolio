@@ -7,7 +7,11 @@ import { MdKeyboardArrowDown, MdMenu } from 'react-icons/md';
 import { useSideMenu } from '@/hooks/SideMenu';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const Menu: React.FC = () => {
+interface IMenuProps {
+  onClickOpenOptionLanguage?(): void;
+}
+
+const Menu: React.FC<IMenuProps> = ({ onClickOpenOptionLanguage }) => {
   const { locale, push, pathname } = useRouter();
   const { sideMenuModalizeRef } = useSideMenu();
   const text = useLanguage();
@@ -22,6 +26,11 @@ const Menu: React.FC = () => {
   const onChangeLanguage = (_locale: string) => {
     push(pathname, pathname, { locale: _locale });
     setIsOptionLanguageOpened(false);
+  };
+
+  const handleOnClickOpenOptionLanguage = () => {
+    if (onClickOpenOptionLanguage) onClickOpenOptionLanguage();
+    setIsOptionLanguageOpened(st => !st);
   };
 
   return (
@@ -39,7 +48,7 @@ const Menu: React.FC = () => {
         <button
           type="button"
           className="flex items-center h-6 w-20 p-0.5 rounded bg-white"
-          onClick={() => setIsOptionLanguageOpened(st => !st)}
+          onClick={handleOnClickOpenOptionLanguage}
         >
           <span className="w-full font-medium uppercase">{locale}</span>
           <MdKeyboardArrowDown size={24} className="" />
