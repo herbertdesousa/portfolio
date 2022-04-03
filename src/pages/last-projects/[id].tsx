@@ -25,7 +25,8 @@ const LastProjectsDetails: React.FC = () => {
   useEffect(() => {
     (async () => {
       if (process.browser) {
-        const url = `http://${window.location.host}/api/projects`;
+        const method = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+        const url = `${method}://${window.location.host}/api/projects`;
 
         const data = await axios.get(url, {
           params: {
