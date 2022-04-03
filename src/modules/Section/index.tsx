@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Avatar, Grid, Menu } from '@/components';
+import { Grid, Menu } from '@/components';
 import Header from '../Header';
 
-const Section: React.FC = ({ children }) => {
+interface ISectionProps {
+  showMenu?: boolean;
+}
+
+const Section: React.FC<ISectionProps> = ({ children, showMenu = true }) => {
   return (
     <>
       {/* DESKTOP */}
@@ -14,9 +18,11 @@ const Section: React.FC = ({ children }) => {
           </div>
 
           <main className="col-span-5 relative">
-            <div className="sticky top-0 right-0 left-0">
-              <Menu />
-            </div>
+            {showMenu && (
+              <div className="sticky top-0 right-0 left-0">
+                <Menu />
+              </div>
+            )}
 
             <div className="pr-16 pt-12">{children}</div>
           </main>
@@ -25,7 +31,7 @@ const Section: React.FC = ({ children }) => {
 
       {/* MOBILE AND TABLET */}
       <div className="relative lg:hidden">
-        <Menu />
+        {showMenu && <Menu />}
         <Grid>
           <div className="py-12 col-span-4 md:col-span-8">{children}</div>
         </Grid>

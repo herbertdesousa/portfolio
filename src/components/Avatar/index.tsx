@@ -1,13 +1,16 @@
-import { useContactMenu } from '@/hooks/ContactMenu';
 import React from 'react';
 
 import { MdOpenInNew } from 'react-icons/md';
+
+import { useLanguage } from '@/hooks/useLanguage';
+import { useContactMenu } from '@/hooks/ContactMenu';
 
 interface IAvatarProps {
   onClickContact?(): void;
 }
 
 const Avatar: React.FC<IAvatarProps> = ({ onClickContact }) => {
+  const text = useLanguage();
   const { contactMenuModalizeRef } = useContactMenu();
 
   return (
@@ -24,7 +27,7 @@ const Avatar: React.FC<IAvatarProps> = ({ onClickContact }) => {
         <strong className="text-left">Herbert Vilela</strong>
         <br />
         <span className="flex items-center text-gray">
-          Contact
+          {text.avatar.contact}
           <MdOpenInNew className="ml-2" />
         </span>
       </div>

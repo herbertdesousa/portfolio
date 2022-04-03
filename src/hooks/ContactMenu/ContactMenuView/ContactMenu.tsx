@@ -5,10 +5,10 @@ import React, {
   useState,
 } from 'react';
 
-import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
-import { Avatar } from '@/components';
+import { useLanguage } from '@/hooks/useLanguage';
+
 import { MdClose, MdOpenInNew } from 'react-icons/md';
 import style from './ContactMenu.module.css';
 
@@ -26,7 +26,7 @@ const ContactMenu: React.ForwardRefRenderFunction<IContactMenuRef, IProps> = (
   { className },
   ref,
 ) => {
-  const { pathname, push } = useRouter();
+  const text = useLanguage();
 
   const [isOpened, setIsOpened] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -81,7 +81,7 @@ const ContactMenu: React.ForwardRefRenderFunction<IContactMenuRef, IProps> = (
         onTransitionEnd={() => setIsVisible(isOpened)}
       >
         <div className="flex justify-between items-start">
-          <h1 className="font-bold text-4xl mb-4 mt-">Contacts</h1>
+          <h1 className="font-bold text-4xl mb-4 mt-">{text.contact.title}</h1>
           <button type="button" onClick={closeContactMenu}>
             <MdClose size={24} className="text-gray" />
           </button>

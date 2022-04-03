@@ -1,14 +1,20 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
+import { useLanguage } from '@/hooks/useLanguage';
+
 import { Section } from '@/modules';
 
 const LastProjects: React.FC = () => {
+  const text = useLanguage();
+
   const { push } = useRouter();
 
   return (
     <Section>
-      <h1 className="font-bold text-4xl mb-4 mt-">Recent Projects</h1>
+      <h1 className="font-bold text-4xl mb-4 mt-">
+        {text.sections.lastProjects.title}
+      </h1>
 
       <ul className="grid grid-cols-2 gap-4 mt-12 md:grid-cols-3">
         {[1, 2, 3, 4].map(item => (

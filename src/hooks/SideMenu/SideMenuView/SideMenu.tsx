@@ -8,6 +8,8 @@ import React, {
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
+import { useLanguage } from '@/hooks/useLanguage';
+
 import { Avatar } from '@/components';
 import style from './SideMenu.module.css';
 
@@ -26,6 +28,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
   ref,
 ) => {
   const { pathname, push } = useRouter();
+  const text = useLanguage();
 
   const [isOpened, setIsOpened] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -98,7 +101,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/');
               }}
             >
-              About
+              {text.sections.about.title}
             </button>
           </li>
           <li>
@@ -110,7 +113,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/last-projects');
               }}
             >
-              Last Projects
+              {text.sections.lastProjects.title}
             </button>
           </li>
           <li>
@@ -122,7 +125,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/certificates');
               }}
             >
-              Certificates
+              {text.sections.certificates.title}
             </button>
           </li>
           <li>
@@ -134,7 +137,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/experiencies');
               }}
             >
-              Experiences
+              {text.sections.experiencies.title}
             </button>
           </li>
           <li>
@@ -146,7 +149,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/skills');
               }}
             >
-              Skills
+              {text.sections.skills.title}
             </button>
           </li>
           <li>
@@ -158,7 +161,7 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
                 push('/cv');
               }}
             >
-              CV
+              {text.sections.cv.title}
             </button>
           </li>
         </ul>

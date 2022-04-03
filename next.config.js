@@ -1,5 +1,6 @@
 module.exports = {
-  images: {
-    domains: ['www.gravatar.com'],
-  },
+  i18n: {
+    locales: ['en', 'pt-br'],
+    defaultLocale: 'pt-br',
+  }
 }

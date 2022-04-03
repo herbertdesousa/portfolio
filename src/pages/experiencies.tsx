@@ -1,11 +1,16 @@
 import React from 'react';
 
 import { Section } from '@/modules';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Experiencies: React.FC = () => {
+  const text = useLanguage();
+
   return (
     <Section>
-      <h1 className="font-bold text-4xl mb-4 mt-">Experiencies</h1>
+      <h1 className="font-bold text-4xl mb-4 mt-">
+        {text.sections.experiencies.title}
+      </h1>
 
       <ul className="mt-12">
         {[1].map(item => (

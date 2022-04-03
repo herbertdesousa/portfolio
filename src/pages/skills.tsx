@@ -1,13 +1,17 @@
 import React, { useRef } from 'react';
 
 import { Section } from '@/modules';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Skills: React.FC = () => {
+  const text = useLanguage();
   const carouselRef = useRef<HTMLUListElement>(null);
 
   return (
     <Section>
-      <h1 className="font-bold text-4xl mb-4 mt-">Skills</h1>
+      <h1 className="font-bold text-4xl mb-4 mt-">
+        {text.sections.skills.title}
+      </h1>
 
       <ul
         ref={carouselRef}
@@ -24,14 +28,18 @@ const Skills: React.FC = () => {
         ))}
       </ul>
 
-      <h2 className="font-bold text-2xl mt-8">Language</h2>
+      <h2 className="font-bold text-2xl mt-8">
+        {text.sections.skills.languages}
+      </h2>
       <p className="text-left text-gray mt-2">
         PORTUGUESE (NATIVE)
         <br />
         ENGLISH (INTERMEDIATE)
       </p>
 
-      <h2 className="font-bold text-2xl mt-8">Hobbies</h2>
+      <h2 className="font-bold text-2xl mt-8">
+        {text.sections.skills.hobbies}
+      </h2>
       <p className="text-left text-gray mt-2 uppercase">
         MUSIC
         <br />

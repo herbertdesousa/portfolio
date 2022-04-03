@@ -3,23 +3,28 @@ import React from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { useRouter } from 'next/router';
 
+import { useLanguage } from '@/hooks/useLanguage';
 import { Section } from '@/modules';
 
 const LastProjectsDetails: React.FC = () => {
-  const { back } = useRouter();
+  const { push } = useRouter();
+
+  const text = useLanguage();
 
   return (
-    <Section>
+    <Section showMenu={false}>
       <button
         type="button"
         className="flex items-center text-gray text-lg mb-8"
-        onClick={back}
+        onClick={() => push('/last-projects')}
       >
         <MdArrowBack className="mr-2" />
-        Projects
+        {text.sections.lastProjects.details.backTitle}
       </button>
 
-      <h1 className="font-bold text-4xl mb-4">Detalhes</h1>
+      <h1 className="font-bold text-4xl mb-4">
+        {text.sections.lastProjects.details.title}
+      </h1>
 
       <div className="w-full rounded bg-gray mt-8" style={{ height: 190 }} />
       <ul className="flex mt-2">

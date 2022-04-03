@@ -1,14 +1,17 @@
 import React from 'react';
 
 import { MdOpenInNew } from 'react-icons/md';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Section } from '@/modules';
 
 const Certificates: React.FC = () => {
+  const text = useLanguage();
+
   return (
     <Section>
       <h1 className="font-bold text-4xl mb-4 mt-">
-        Education and Certificates
+        {text.sections.certificates.longTitle}
       </h1>
 
       <ul className="mt-12">
