@@ -19,6 +19,12 @@ const data = [
     date: '2021-2022',
     url: '/certificates/justjavascript.pdf',
   },
+  {
+    id: 'id-003',
+    title: 'UI Start',
+    date: '2022',
+    url: '/certificates/uistart.pdf',
+  },
 ];
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
