@@ -1,30 +1,63 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { v4 } from 'uuid';
 
-const projects = {
+interface IProjects {
+  'pt-br': {
+    id: string;
+    title: string;
+    techs: string[];
+    description: string;
+    img?: string;
+  }[];
+  en: {
+    id: string;
+    title: string;
+    techs: string[];
+    description: string;
+    img?: string;
+  }[];
+}
+
+const projects: IProjects = {
   'pt-br': [
     {
-      id: 'id-001',
+      id: v4(),
+      title: 'Vilela Document',
+      techs: ['React', 'Design', 'PDF'],
+      description:
+        'Gerador de documentos em PDF para empresa de ar condicionado, usuário informa dados em formulário e ao lado é mostrado um preview do PDF final',
+      img: '/projects/vilela-document.png',
+    },
+    {
+      id: v4(),
+      title: 'Bingo',
+      techs: ['React', 'Design'],
+      description:
+        'Freelance de um projeto de Bingo disponibilizado na TV para idosos',
+    },
+    {
+      id: v4(),
       title: 'Mais Cargas',
       techs: ['JS', 'API', 'Design', 'RN'],
       description:
         'Projeto feito para motoristas de caminhões onde precisam achar fretes na região para fazer um frete. Usando um sistema de check in de origem e destino, é traçado a rota do caminhoneiro para encontrar fretes mais próximos na região.',
     },
     {
-      id: 'id-003',
+      id: v4(),
       title: 'Buyest',
       techs: ['JS', 'UI/UX', 'RN'],
       description: 'Template para RN Expo de um ecommerce minimalista',
       img: '/projects/buyest.png',
     },
     {
-      id: 'id-002',
+      id: v4(),
       title: 'Guia Cotações',
       techs: ['JS', 'API', 'Design', 'RN'],
       description:
         'App mobile para enviar cotações à um sistema de distribuições de cotações para clientes. Um formulário grande onde mostra todas as informações necessárias para executar um transporte de uma carga.',
     },
     {
-      id: 'id-004',
+      id: v4(),
       title: 'Vilela Finance',
       techs: ['JS', 'UI/UX', 'RN', 'NodeJs'],
       description:
@@ -34,28 +67,43 @@ const projects = {
   ],
   en: [
     {
-      id: 'id-001',
+      id: v4(),
+      title: 'Vilela Document',
+      techs: ['React', 'Design', 'PDF'],
+      description:
+        'PDF generator for air conditioning company, the user type all data in the forms and a display on the side shows the result of the PDF',
+      img: '/projects/vilela-document.png',
+    },
+    {
+      id: v4(),
+      title: 'Bingo',
+      techs: ['React', 'Design'],
+      description:
+        'Bingo Freelance project made available on TV for the elderly in the asylum',
+    },
+    {
+      id: v4(),
       title: 'Mais Cargas',
       techs: ['JS', 'API', 'Design', 'RN'],
       description:
         'Project made for truck drivers where they need to find in the region to make a freight. Using a source and destination system, the route of the predicted path is checked to find the next ones in the region.',
     },
     {
-      id: 'id-003',
+      id: v4(),
       title: 'Buyest',
       techs: ['JS', 'UI/UX', 'RN'],
       description: 'Template for RN Expo of a minimalist ecommerce.',
       img: '/projects/buyest.png',
     },
     {
-      id: 'id-002',
+      id: v4(),
       title: 'Guia Cotações',
       techs: ['JS', 'API', 'Design', 'RN'],
       description:
         'Mobile app to send quotes to a quote distribution system for customers. A large form that shows all the information needed to carry out a shipment of a load.',
     },
     {
-      id: 'id-004',
+      id: v4(),
       title: 'Vilela Finance',
       techs: ['JS', 'UI/UX', 'RN', 'NodeJs'],
       description:
