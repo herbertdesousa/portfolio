@@ -15,7 +15,7 @@ import Link from 'next/link';
 import style from './ContactMenu.module.css';
 
 const links = {
-  whatsapp: 'https://api.whatsapp.com/send?phone=+5511959110254',
+  whatsapp: 'https://api.whatsapp.com/send?phone=5511959110254',
   gmail: 'mailto:sousaherbert138@gmail.com',
   linkedin: 'https://www.linkedin.com/in/herbert-de-sousa-vilela-311638230/',
   github: 'https://github.com/herbertdesousa',
