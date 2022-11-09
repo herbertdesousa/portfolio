@@ -64,6 +64,14 @@ const projects: IProjects = {
         'App para anotar financias de uma empresa. As funções são adicionar, remover, atualizar e listar um cliente, relacionado à um cliente o lucro na listagem de financia.',
       img: '/projects/vilela-finance.png',
     },
+    {
+      id: v4(),
+      title: 'Premium List',
+      techs: ['NextJS', 'UI/UX', 'React', 'NodeJs', 'Prisma'],
+      description:
+        'Marketplace de artigos de luxo. Venda de Carros, Motos, Iates, Mansões e outros',
+      img: '/projects/premiumlist.jpg',
+    },
   ],
   en: [
     {
@@ -109,6 +117,14 @@ const projects: IProjects = {
       description:
         "App to note company's finances. The functions of adding, removing, updating and listing a customer, related to a customer the profit in the listing of finances.",
       img: '/projects/vilela-finance.png',
+    },
+    {
+      id: v4(),
+      title: 'Premium List',
+      techs: ['NextJS', 'UI/UX', 'React', 'NodeJs', 'Prisma'],
+      description:
+        'Luxury Items Marketplace. Sale of Cars, Motorcycles, Yachts, Mansions and others',
+      img: '/projects/premiumlist.jpg',
     },
   ],
 };
