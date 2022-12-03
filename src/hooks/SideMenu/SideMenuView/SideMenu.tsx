@@ -77,7 +77,6 @@ const SideMenu: React.ForwardRefRenderFunction<ISideMenuRef, IProps> = (
   if (!isVisible) return <></>;
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       <div
         role="button"
         tabIndex={0}

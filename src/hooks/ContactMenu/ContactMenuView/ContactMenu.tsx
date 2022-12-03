@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {
   forwardRef,
   useCallback,
@@ -77,7 +76,6 @@ const ContactMenu: React.ForwardRefRenderFunction<IContactMenuRef, IProps> = (
   if (!isVisible) return <></>;
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       <div
         role="button"
         tabIndex={0}
