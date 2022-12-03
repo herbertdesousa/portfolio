@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
 import '../styles/main.css';
 
