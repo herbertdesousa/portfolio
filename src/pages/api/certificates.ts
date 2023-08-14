@@ -25,6 +25,12 @@ const data = [
     date: '2022',
     url: '/certificates/uistart.pdf',
   },
+  {
+    id: 'id-004',
+    title: 'AI Image Analysis - Data Science Academy',
+    date: '2022',
+    url: '/certificates/image-analysis-datascienceacademy.pdf',
+  },
 ];
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
