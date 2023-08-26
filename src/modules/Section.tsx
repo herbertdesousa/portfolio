@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Grid, Menu } from '@/components';
-import Header from '../Header';
+import Header from './Header';
 
 interface ISectionProps {
   showMenu?: boolean;

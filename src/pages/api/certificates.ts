@@ -28,7 +28,7 @@ const data = [
   {
     id: 'id-004',
     title: 'AI Image Analysis - Data Science Academy',
-    date: '2022',
+    date: '2023',
     url: '/certificates/image-analysis-datascienceacademy.pdf',
   },
 ];
